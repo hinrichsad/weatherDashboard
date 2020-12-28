@@ -1,0 +1,32 @@
+.input_field{
+    margin: 2%;
+}
+h5{
+    padding-top: 5%;
+    margin-left: 1%;
+}
+input[type=text] {
+    color:black;
+    height: 2rem;
+    margin-right: 0;
+}
+#search{
+    height: 2rem;
+    margin-bottom: 5px;
+    margin-left: 0;
+}
+.currentWeather{
+    border: darkgray solid 1px;
+    background-color: #8a9ba5;
+    width: 100%;
+    color: white;
+}
+.upcomingWeather{
+    border: darkgray solid 1px;
+}
+.full{
+    height: 100%;
+}
+.container{
+    border: darkgray solid 1px;
+}
