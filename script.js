@@ -1,14 +1,18 @@
+
+
 $(document).ready(function () {
+
+    var searchArray = [];
+    var search = JSON.parse(localStorage.getItem("search"))
+    localStorage.setItem("search", JSON.stringify(searchArray));
+    searchArray = search;
 
     $("#search").on("click", function () {
         var weatherApi = "2a67ff046d002d779dbfbbaea1bb9fcb";
         var myInput = $("#myInput").val();
         var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + myInput + "&appid=" + weatherApi;
 
-        var searchArray = [];
         searchArray.push(myInput);
-        localStorage.setItem("search", JSON.stringify(searchArray));
-        var search = JSON.parse(localStorage.getItem("search"))
 
         console.log(search);
 
@@ -18,6 +22,8 @@ $(document).ready(function () {
         function clearPrev(){
             $("#myInput").empty();
             $("#currentWeather").empty();
+            $("#searchHistory").empty();
+            $("#myInput").val("");
         }
 
         function renderResults(){
@@ -49,17 +55,14 @@ $(document).ready(function () {
                 currentContainer.attr("class", "currentWeather");
                 currentContainer.append(h1, cTempF, cFeelF, cMain, cDisc)
 
-                $("#currentWeather").append(currentContainer);
-
-                for(i = 0; i > searchArray.length; i++){
-                    var prevSearches = $("<div>").text(searchArray[i]);
-
+                $("#currentWeather").append(currentContainer);   
+    
+                for(i = 0; i < search.length; i++){
+                    var prevSearches = $("<div>").text(search[i]);
+        
                     prevSearches.attr("class", "container")
                     $("#searchHistory").append(prevSearches);
                 }
-   
-    
-    
             });
         }
     });
