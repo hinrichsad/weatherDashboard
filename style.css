@@ -20,6 +20,7 @@ input[type=text] {
     background-color: #8a9ba5;
     width: 100%;
     color: white;
+    margin-bottom: 5%;
 }
 .upcomingWeather{
     border: darkgray solid 1px;
@@ -29,4 +30,23 @@ input[type=text] {
 }
 .container{
     border: darkgray solid 1px;
+}
+.currentIcon{
+    float: left;
+    margin-right: 50%;
+    height: 10%;
+    width: 10%;
+}
+.upcomingCards{
+    float: right;
+    margin-top: 5%;
+    width: 30%;
+    font-size: small;
+    padding: 5%;
+    background-color: #e48385;
+    border: #8a9ba5 solid 1px;
+    border-radius: 20px;
+    color: #2c5160;
+    margin-left: 2%;
+    margin-right: 2%;
 }
